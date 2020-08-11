@@ -7,10 +7,9 @@
 
         <title>@yield('title')</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
         <link href="{{ asset('css/uikit.min.css') }}" rel="stylesheet">
         <script src="{{ asset('js/uikit.min.js') }}"></script>
-        <script src="{{ asset('js/uikit.icons.min.js') }}"></script>
+        <script src="{{ asset('js/uikit-icons.min.js') }}"></script>
 
     </head>
     <body>
@@ -23,10 +22,10 @@
         
             <nav id="nav-header">
                 <ul>
-                    <li><a href="{{ route('home') }}" class="nav-item active">início</a></li>
-                    <li><a href="{{ route('empresa') }}" class="nav-item">empresa</a></li>
-                    <li><a href="{{ route('catalogo') }}" class="nav-item">catálogos</a></li>
-                    <li><a href="{{ route('contato') }}" class="nav-item">contato</a></li>
+                    <li><a href="{{ route('home') }}" class="nav-item {{Request::is('inicio') ?'active':''}}">início</a></li>
+                    <li><a href="{{ route('empresa') }}" class="nav-item {{Request::is('empresa') ?'active':''}}">empresa</a></li>
+                    <li><a href="{{ route('catalogo') }}" class="nav-item {{Request::is('catalogos') ?'active':''}}">catálogos</a></li>
+                    <li><a href="{{ route('contato') }}" class="nav-item {{Request::is('contato') ?'active':''}}">contato</a></li>
                 </ul>
             </nav>
         </header>
