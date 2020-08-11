@@ -1,6 +1,6 @@
 @extends('layouts.institutional')
 
-@section('title', 'Catálogos, Móveis&Cia')
+@section('title', 'Catálogos - Móveis&Cia')
 
 @section('content')
     <h3 class="uk-text-center uk-margin-large-top">Confira nossos catálogos</h3>

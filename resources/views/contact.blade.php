@@ -1,6 +1,6 @@
 @extends('layouts.institutional')
 
-@section('title', 'Contato, Móveis&Cia')
+@section('title', 'Contato - Móveis&Cia')
 
 @section('content')
     <div class="uk-width-1-3 uk-margin-auto">

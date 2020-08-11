@@ -1,6 +1,6 @@
 @extends('layouts.institutional')
 
-@section('title', 'Empresa, Móveis&Cia')
+@section('title', 'Empresa - Móveis&Cia')
 
 @section('content')
     <div class="uk-width-2-3 uk-margin-large-top uk-margin-auto uk-flex uk-flex-middle">
