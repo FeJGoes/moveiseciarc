@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::redirect('/', '/inicio');
 Route::view('/inicio', 'home')->name('home');
-Route::get('/contato', 'ContatoController@page')->name('contato');
-Route::get('/empresa', 'EmpresaController@page')->name('empresa');
+Route::view('/contato', 'contact')->name('contato');
+Route::view('/empresa', 'company')->name('empresa');
 Route::get('/catalogos', 'CatalogoController@page')->name('catalogo');

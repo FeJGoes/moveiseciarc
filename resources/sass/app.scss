@@ -13,13 +13,20 @@
     --color-sec-bkg: #000000;
 }
 
+$color-yellow: #FFC700;
+$color-white: #FFFFFF;
+$color-soft-green: #F2FCF8;
+$color-soft-yellow: #FEFEE7;
+$color-pri-bkg: #303030;
+$color-sec-bkg: #000000;
+
 /*******************************************************************************
  *                              CONFIG BUTTON
  *******************************************************************************
  */
 .btn-yellow {
-    background-color: var(--color-yellow) !important;
-    color: var(--color-white) !important;
+    background-color: $color-yellow !important;
+    color: $color-white !important;
     font-weight: 500 !important;
 }
 
