@@ -18,8 +18,8 @@
  */
 
 .btn-yellow {
-  background-color: var(--color-yellow) !important;
-  color: var(--color-white) !important;
+  background-color: #FFC700 !important;
+  color: #FFFFFF !important;
   font-weight: 500 !important;
 }
 
