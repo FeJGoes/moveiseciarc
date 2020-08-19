@@ -12,7 +12,10 @@ const mix = require("laravel-mix");
  */
 
 mix.js("resources/js/app.js", "public/js")
-    .copyDirectory('resources/images','public/images')
+    .version();
+mix.sass("resources/sass/app.scss", "public/css")
+    .version();
+mix.copyDirectory('resources/images','public/images')
     .copy(
         [
             "vendor/uikit/uikit/dist/js/uikit.min.js",
@@ -21,4 +24,3 @@ mix.js("resources/js/app.js", "public/js")
         "public/js"
     )
     .copy("vendor/uikit/uikit/dist/css/uikit.min.css", "public/css/")
-    .sass("resources/sass/app.scss", "public/css");
