@@ -3,14 +3,14 @@
 @section('title', 'Bem Vindo! Móveis&Cia')
 
 @section('content')
-<div class="uk-height-large uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light" data-src="{{ asset('images/home.png') }}" uk-img>
+<div class="uk-height-large uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light" data-src="{{ asset('images/home.png') }}" uk-img style="filter: brightness(0.8); ">
     <div class="uk-margin-xlarge-left uk-flex uk-flex-column uk-width-1-4">
         <img src="{{ asset('images/logo-branco.png') }}" alt="logo" width="60">
         <hr>
         <p>Móveis e eletrodomésticos novos e usados. Aceitamos seu usado como base de troca em qualquer produto ou serviço.</p>
         <small>Conheça melhor nossa empresa</small>
         <div class="uk-flex uk-flex-left uk-margin ">
-            <button class="uk-button uk-button-small btn-yellow">Empresa</button>
+            <button class="uk-button uk-button-small btn-yellow btn-opacity-1-2">Empresa</button>
         </div>
     </div>
 </div>

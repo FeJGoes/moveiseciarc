@@ -1,5 +1,6 @@
+
 #section-info {
-    background: var(--color-soft-green);
+    background:  variables.$color-soft-green;
     text-align: center;
 }
 
@@ -16,7 +17,7 @@
 }
 
 .box-contact ul li {
-    color:  var(--color-pri-bkg) !important;
+    color:   variables.$color-pri-bkg !important;
     font-size: small;
     display: flex;
 }
@@ -28,7 +29,7 @@
 }
 
 .box-contact table tbody td a{
-    color:  var(--color-pri-bkg) !important;
+    color:   variables.$color-pri-bkg !important;
 }
 
 #section-location {
@@ -43,7 +44,7 @@
 }
 
 .box-location ul li {
-    color:  var(--color-pri-bkg) !important;
+    color:   variables.$color-pri-bkg !important;
     font-size: small;
     display: flex;
 }

@@ -1,0 +1,16 @@
+
+.btn-yellow {
+    background-color: variables.$color-yellow !important;
+    color: variables.$color-white !important;
+    font-weight: 500 !important;
+    border-radius: 2px !important;
+}
+
+.btn-yellow:hover {
+    filter: brightness(95%);
+}
+
+.btn-opacity-1-2 {
+    background: variables.$color-yellow-opacity !important;
+}
+
