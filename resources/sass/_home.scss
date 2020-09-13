@@ -1,5 +1,27 @@
 
+
 #section-info-home {
     background:  variables.$color-soft-yellow;
     text-align: center;
 }
+
+.banner-home {
+
+    position: relative;
+    height: variables.$banner-height;
+
+    & > img {
+        width: 100vw;
+        height: variables.$banner-height;
+        object-fit: cover !important;
+        object-position: center right !important;
+        filter: brightness(0.5);
+    }
+
+    & > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+

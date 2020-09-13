@@ -20,6 +20,10 @@
   background: #ffc800b3 !important;
 }
 
+.text-p {
+  color: #FFFFFF !important;
+}
+
 #main-header {
   background: #303030;
   display: flex;
@@ -201,5 +205,27 @@
 #section-info-home {
   background: #FEFEE7;
   text-align: center;
+}
+
+.banner-home {
+  position: relative;
+  height: 400px;
+}
+
+.banner-home > img {
+  width: 100vw;
+  height: 400px;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  -o-object-position: center right !important;
+     object-position: center right !important;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.banner-home > div {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 

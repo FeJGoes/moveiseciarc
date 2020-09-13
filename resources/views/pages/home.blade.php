@@ -1,16 +1,19 @@
-@extends('layouts.institutional')
+@extends('institutional')
 
 @section('title', 'Bem Vindo! Móveis&Cia')
 
 @section('content')
-<div class="uk-height-large uk-flex uk-flex-left uk-flex-middle uk-background-cover uk-light" data-src="{{ asset('images/home.png') }}" uk-img style="filter: brightness(0.8); ">
-    <div class="uk-margin-xlarge-left uk-flex uk-flex-column uk-width-1-4">
+
+<div class="banner-home uk-flex uk-flex-column">
+    <img src="{{ asset('images/home.png') }}">
+    
+    <div class="uk-flex uk-flex-column uk-margin-large-left uk-margin-large-top uk-width-1-4@s uk-width-3-4">
         <img src="{{ asset('images/logo-branco.png') }}" alt="logo" width="60">
         <hr>
-        <p>Móveis e eletrodomésticos novos e usados. Aceitamos seu usado como base de troca em qualquer produto ou serviço.</p>
-        <small>Conheça melhor nossa empresa</small>
-        <div class="uk-flex uk-flex-left uk-margin ">
-            <button class="uk-button uk-button-small btn-yellow btn-opacity-1-2">Empresa</button>
+        <p class="text-p">Móveis e eletrodomésticos novos e usados. Aceitamos seu usado como base de troca em qualquer produto ou serviço.</p>
+        <small class="text-p">Conheça melhor nossa empresa</small>
+        <div class="uk-flex uk-flex-left uk-margin">
+            <a href="{{ route('empresa') }}" class="uk-button uk-button-small btn-yellow btn-opacity-1-2">Empresa</a>
         </div>
     </div>
 </div>
@@ -38,7 +41,7 @@
 
     <small>Veja mais</small>
     <div class="uk-flex uk-flex-center">
-        <button class="uk-button uk-button-small btn-yellow">Catálogos</button>
+        <a href="{{ route('catalogo') }}" class="uk-button uk-button-small btn-yellow">Catálogos</a>
     </div>
 </div>
 
@@ -48,7 +51,7 @@
 
     <small>Veja mais</small>
     <div class="uk-flex uk-flex-center">
-        <button class="uk-button uk-button-small btn-yellow">contato</button>
+        <a href="{{ route('contato') }}" class="uk-button uk-button-small btn-yellow">contato</a>
     </div>
 </div>
 @endsection

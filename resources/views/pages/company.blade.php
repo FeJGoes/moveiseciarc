@@ -1,10 +1,10 @@
-@extends('layouts.institutional')
+@extends('institutional')
 
 @section('title', 'Empresa - Móveis&Cia')
 
 @section('content')
     <div class="uk-width-2-3 uk-margin-large-top uk-margin-auto uk-flex uk-flex-middle">
-        <figure class="uk-width-1-3"> 
+        <figure class="uk-width-1-3">
             <img src="{{ asset('images/sobre-empresa.png') }}" alt="sobre">
         </figure>
         <div class="uk-width-2-3">
@@ -21,7 +21,7 @@
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, beatae provident, necessitatibus id dicta dolores voluptatibus doloremque, nesciunt sed dolor at fugiat quasi sit molestias! Possimus consequatur nisi aspernatur eaque?</p>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aut, beatae provident, necessitatibus id dicta dolores voluptatibus doloremque, nesciunt sed dolor at fugiat quasi sit molestias! Possimus consequatur nisi aspernatur eaque?</p>
         </div>
-        <figure class="uk-width-1-3"> 
+        <figure class="uk-width-1-3">
             <img src="{{ asset('images/como-trabalhamos.png') }}" alt="como">
         </figure>
     </div>

@@ -1,4 +1,4 @@
-@extends('layouts.institutional')
+@extends('institutional')
 
 @section('title', 'Contato - Móveis&Cia')
 
@@ -78,7 +78,7 @@
             </ul>
         </div>
         <div class="uk-width-1-5" id="map" style="background-color: red;">
-            
+
         </div>
     </div>
 @endsection

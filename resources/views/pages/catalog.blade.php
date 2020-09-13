@@ -1,4 +1,4 @@
-@extends('layouts.institutional')
+@extends('institutional')
 
 @section('title', 'Catálogos - Móveis&Cia')
 
