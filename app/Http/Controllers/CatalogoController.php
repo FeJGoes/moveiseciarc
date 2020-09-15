@@ -13,7 +13,7 @@ class CatalogoController extends Controller
      */
     public function page()
     {
-        return view('pages.catalog');
+        return view('web.pages.catalog');
     }
 
     /**

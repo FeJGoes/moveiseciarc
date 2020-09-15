@@ -14,13 +14,13 @@
     </head>
     <body>
 
-        @include('components.header')
+        @include('web.layout.header')
 
         <main>
             @yield('content')
         </main>
 
-        @include('components.footer')
+        @include('web.layout.footer')
 
         <script src="{{ asset('js/app.js') }}"></script>
     </body>

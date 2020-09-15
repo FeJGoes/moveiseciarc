@@ -25,3 +25,26 @@
     }
 }
 
+.card-home {
+    margin: 0 25px;
+    height: 250px;
+    position: relative;
+
+    & img {
+        width: 300px;
+        min-width: 250px;
+        height: 250px;
+        object-fit: cover;
+        object-position: center center;
+        filter: brightness(0.5);
+    }
+
+    & h4 {
+        margin: 0 auto;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+    }
+}
+

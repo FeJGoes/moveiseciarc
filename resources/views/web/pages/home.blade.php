@@ -1,4 +1,4 @@
-@extends('institutional')
+@extends('web.institutional')
 
 @section('title', 'Bem Vindo! Móveis&Cia')
 
@@ -6,9 +6,9 @@
 
 <div class="banner-home uk-flex uk-flex-column">
     <img src="{{ asset('images/home.png') }}">
-    
+
     <div class="uk-flex uk-flex-column uk-margin-large-left uk-margin-large-top uk-width-1-4@s uk-width-3-4">
-        <img src="{{ asset('images/logo-branco.png') }}" alt="logo" width="60">
+        <img src="{{ asset('images/logo-branco.png') }}" alt="logo" width="100">
         <hr>
         <p class="text-p">Móveis e eletrodomésticos novos e usados. Aceitamos seu usado como base de troca em qualquer produto ou serviço.</p>
         <small class="text-p">Conheça melhor nossa empresa</small>
@@ -18,26 +18,26 @@
     </div>
 </div>
 
-<div class="uk-text-center uk-margin-xlarge">
+<div class="uk-text-center uk-margin-large">
     <h3>Catálogos</h3>
-    <div class="uk-flex uk-flex-center">
-        <figure class="uk-margin-small">
-            <img src="" alt="novos">
-            <h4>Novos</h4>
+    <div class="uk-flex uk-flex-center uk-flex-wrap">
+        <figure class="card-home">
+            <img src="{{ asset('images/moveis1.jpg') }}" alt="novos">
+            <h4 class="text-p">Novos</h4>
         </figure>
 
-        <figure class="uk-margin-small">
-            <img src="" alt="usados">
-            <h4>Usados</h4>
+        <figure class="card-home">
+            <img src="{{ asset('images/moveis2.jpg') }}" alt="usados">
+            <h4 class="text-p">Usados</h4>
         </figure>
 
-        <figure class="uk-margin-small">
-            <img src="" alt="modelados">
-            <h4>Modelados</h4>
+        <figure class="card-home">
+            <img src="{{ asset('images/moveis3.jpg') }}" alt="modelados">
+            <h4 class="text-p">Modelados</h4>
         </figure>
     </div>
 
-    <p class="uk-margin-xlarge-left uk-margin-xlarge-right">Hoje em dia, ter uma catálogo online é imprescindível. Você pode alcançar mais clientes, mais rapidamente e a qualquer momento. Os benefícios de ter seu catálogo sempre disponível online são infinitos</p>
+    <p class="uk-margin-large-top uk-margin-xlarge-left uk-margin-xlarge-right">Hoje em dia, ter uma catálogo online é imprescindível. Você pode alcançar mais clientes, mais rapidamente e a qualquer momento. Os benefícios de ter seu catálogo sempre disponível online são infinitos</p>
 
     <small>Veja mais</small>
     <div class="uk-flex uk-flex-center">

@@ -229,3 +229,29 @@
   left: 0;
 }
 
+.card-home {
+  margin: 0 25px;
+  height: 250px;
+  position: relative;
+}
+
+.card-home img {
+  width: 300px;
+  min-width: 250px;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  -webkit-filter: brightness(0.5);
+          filter: brightness(0.5);
+}
+
+.card-home h4 {
+  margin: 0 auto;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+

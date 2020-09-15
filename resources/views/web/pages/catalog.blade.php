@@ -1,4 +1,4 @@
-@extends('institutional')
+@extends('web.institutional')
 
 @section('title', 'Catálogos - Móveis&Cia')
 
