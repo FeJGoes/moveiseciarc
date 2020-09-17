@@ -7,7 +7,7 @@
 <div class="banner-home uk-flex uk-flex-column">
     <img src="{{ asset('images/home.png') }}">
 
-    <div class="uk-flex uk-flex-column uk-margin-large-left uk-margin-large-top uk-width-1-4@s uk-width-3-4">
+    <div class="uk-flex uk-flex-column uk-margin-large-left uk-margin-large-top uk-width-3-4 uk-width-1-2@s uk-width-1-3@m">
         <img src="{{ asset('images/logo-branco.png') }}" alt="logo" width="100">
         <hr>
         <p class="text-p">Móveis e eletrodomésticos novos e usados. Aceitamos seu usado como base de troca em qualquer produto ou serviço.</p>

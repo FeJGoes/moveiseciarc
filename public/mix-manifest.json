@@ -1,7 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=391ed4449dbe8f074824",
-    "/css/app.css": "/css/app.css?id=9f36197300e4b36e0d41",
-    "/js/uikit.min.js": "/js/uikit.min.js?id=cfb344a4479168c394e9",
-    "/js/uikit-icons.min.js": "/js/uikit-icons.min.js?id=ec025f8e835d674eeaa5",
-    "/css/uikit.min.css": "/css/uikit.min.css?id=1753dfef8f786693455e"
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/uikit.min.js": "/js/uikit.min.js",
+    "/js/uikit-icons.min.js": "/js/uikit-icons.min.js",
+    "/css/uikit.min.css": "/css/uikit.min.css"
 }

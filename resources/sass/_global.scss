@@ -1,3 +1,11 @@
+* {
+    font-family: 'Jost', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap');
+
 
 .btn-yellow {
     background-color: variables.$color-yellow !important;

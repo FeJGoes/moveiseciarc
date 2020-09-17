@@ -1,12 +1,9 @@
-
-
 #section-info-home {
     background:  variables.$color-soft-yellow;
     text-align: center;
 }
 
 .banner-home {
-
     position: relative;
     height: variables.$banner-height;
 
@@ -25,8 +22,9 @@
     }
 }
 
+
 .card-home {
-    margin: 0 25px;
+    margin: 10px 25px;
     height: 250px;
     position: relative;
 
@@ -44,7 +42,25 @@
         width: 100%;
         position: absolute;
         bottom: 0;
+        margin: 15px auto;
         text-align: center;
     }
+
+    // @media screen and (max-width: variables.$breakpoint-small) {
+    //     margin: 15px auto;
+
+    //     & img {
+    //         width: 85%;
+    //     }
+    // }
+
+    @media screen and (max-width: variables.$breakpoint-medium) {
+        margin: 15px auto;
+
+        & img {
+            width: 350px;
+        }
+    }
+
 }
 
