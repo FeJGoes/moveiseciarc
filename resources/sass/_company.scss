@@ -1,0 +1,31 @@
+.app-section-company {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 70px auto;
+
+    figure {
+        min-width: 300px;
+        width: 40%;
+    }
+
+    &:nth-child(odd) {
+        flex-direction: row;
+    }
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    @media screen and (max-width: variables.$breakpoint-m) {
+        margin: 50px 25px;
+
+        figure {
+            width: 65%;
+        }
+
+        &:nth-child(n) {
+            flex-direction: column;
+        }
+    }
+}

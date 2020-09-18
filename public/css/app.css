@@ -202,6 +202,40 @@
   padding: 0;
 }
 
+.app-section-company {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 70px auto;
+}
+
+.app-section-company figure {
+  min-width: 300px;
+  width: 40%;
+}
+
+.app-section-company:nth-child(odd) {
+  flex-direction: row;
+}
+
+.app-section-company:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 960px) {
+  .app-section-company {
+    margin: 50px 25px;
+  }
+
+  .app-section-company figure {
+    width: 65%;
+  }
+
+  .app-section-company:nth-child(n) {
+    flex-direction: column;
+  }
+}
+
 #section-info-home {
   background: #FEFEE7;
   text-align: center;

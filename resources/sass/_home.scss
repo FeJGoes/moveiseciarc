@@ -46,7 +46,7 @@
         text-align: center;
     }
 
-    // @media screen and (max-width: variables.$breakpoint-small) {
+    // @media screen and (max-width: variables.$breakpoint-s) {
     //     margin: 15px auto;
 
     //     & img {
@@ -54,7 +54,7 @@
     //     }
     // }
 
-    @media screen and (max-width: variables.$breakpoint-medium) {
+    @media screen and (max-width: variables.$breakpoint-m) {
         margin: 15px auto;
 
         & img {

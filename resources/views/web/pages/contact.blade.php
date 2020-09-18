@@ -3,7 +3,9 @@
 @section('title', 'Contato - Móveis&Cia')
 
 @section('content')
-    <div class="uk-width-1-3 uk-margin-auto">
+    <form class="uk-width-1-3@m uk-width-1-2@s uk-width-4-5 uk-margin-auto" method="POST" action="" onsubmit="return false">
+        @csrf
+
         <h3 class="uk-text-center uk-margin-medium-top">Fale Conosco</h3>
         <div class="uk-margin-middle-top">
             <label for="nome" class="uk-form-label">
@@ -29,7 +31,7 @@
         <div class="uk-flex uk-flex-center uk-margin ">
             <button class="uk-button uk-button-small uk-width-1-3 btn-yellow">Enviar</button>
         </div>
-    </div>
+    </form>
     <div id="section-info" class="uk-width-1-1 uk-padding">
         <h4>Meios para o Contato:</h4>
         <div id="contact-info" class="uk-width-1-1">
