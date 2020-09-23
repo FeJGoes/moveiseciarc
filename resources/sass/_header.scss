@@ -66,3 +66,13 @@
     text-decoration: none;
     color:  variables.$text-primary;
 }
+
+.app-offcanvas {
+    .nav-item {
+        font-size: 1.35em;
+    }
+}
+
+.app-offcanvas-close {
+    color: variables.$color-yellow !important;
+}

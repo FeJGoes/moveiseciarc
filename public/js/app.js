@@ -19332,6 +19332,14 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+window.animateHamburger = function () {
+  var burgerSVG = document.getElementById('burger');
+  burgerSVG.classList.toggle('active');
+  setTimeout(function () {
+    burgerSVG.classList.toggle('active');
+  }, 1000);
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

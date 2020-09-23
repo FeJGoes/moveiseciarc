@@ -24,6 +24,56 @@
   color: #FFFFFF !important;
 }
 
+.ham {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #FFFFFF;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+/* HAMBURGER 7 */
+
+.ham1 .top {
+  stroke-dasharray: 40 139;
+}
+
+.ham1 .bottom {
+  stroke-dasharray: 40 180;
+}
+
+.ham1.active .top {
+  stroke-dashoffset: -98px;
+  stroke: #FFC700;
+}
+
+.ham1.active .bottom {
+  stroke-dashoffset: -138px;
+  stroke: #FFC700;
+}
+
+.ham1.active .middle {
+  stroke: #FFC700;
+}
+
 #main-header {
   background: #303030;
   display: flex;
@@ -92,6 +142,14 @@
   color: #FFFFFF;
 }
 
+.app-offcanvas .nav-item {
+  font-size: 1.35em;
+}
+
+.app-offcanvas-close {
+  color: #FFC700 !important;
+}
+
 #main-footer {
   background: #303030;
   display: flex;
@@ -107,6 +165,19 @@
   justify-content: center;
   align-items: flex-start;
   padding: 25px 0;
+}
+
+@media screen and (max-width: 960px) {
+  #info-footer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  #info-footer .box-footer {
+    margin: 15px auto;
+  }
 }
 
 #main-footer h5 {
