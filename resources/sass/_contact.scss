@@ -9,28 +9,31 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    flex-wrap: wrap;
     padding: 25px 0;
+
+    .box-contact {
+        margin: 0 25px;
+        min-width: 300px;
+    }
+
+    .box-contact ul li {
+        color:   variables.$color-pri-bkg !important;
+        font-size: small;
+        display: flex;
+    }
+
+    .box-contact ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .box-contact table tbody td a{
+        color:   variables.$color-pri-bkg !important;
+    }
 }
 
-.box-contact {
-    margin: 0 25px;
-}
-
-.box-contact ul li {
-    color:   variables.$color-pri-bkg !important;
-    font-size: small;
-    display: flex;
-}
-
-.box-contact ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.box-contact table tbody td a{
-    color:   variables.$color-pri-bkg !important;
-}
 
 #section-location {
     display: flex;
