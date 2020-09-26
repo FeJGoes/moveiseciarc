@@ -3,5 +3,11 @@
     width: 15%;
     margin: 15px 10px;
 
+    .app-card-catalog-img {
+        object-fit: cover;
+        object-position: center center;
+        height: 250px;
+        width: 100%;
+    }
 
 }

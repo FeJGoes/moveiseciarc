@@ -9,7 +9,7 @@
         <div class="app-card-catalog">
             <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="" alt="">
+                    <img class="app-card-catalog-img" src="{{ asset('images/moveis1.jpg') }}" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">Media Top</h3>
@@ -22,7 +22,7 @@
         <div class="app-card-catalog">
             <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="" alt="">
+                    <img class="app-card-catalog-img" src="{{ asset('images/moveis2.jpg') }}" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">Media Top</h3>
@@ -35,7 +35,7 @@
         <div class="app-card-catalog">
             <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="" alt="">
+                    <img class="app-card-catalog-img" src="{{ asset('images/moveis3.jpg') }}" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">Media Top</h3>
@@ -48,7 +48,7 @@
         <div class="app-card-catalog">
             <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="" alt="">
+                    <img class="app-card-catalog-img" src="{{ asset('images/moveis1.jpg') }}" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">Media Top</h3>
@@ -61,7 +61,7 @@
         <div class="app-card-catalog">
             <div class="uk-card uk-card-default">
                 <div class="uk-card-media-top">
-                    <img src="" alt="">
+                    <img class="app-card-catalog-img" src="{{ asset('images/moveis2.jpg') }}" alt="">
                 </div>
                 <div class="uk-card-body">
                     <h3 class="uk-card-title">Media Top</h3>

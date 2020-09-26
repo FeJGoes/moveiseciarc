@@ -10,7 +10,7 @@
         <script src="{{ asset('js/uikit.min.js') }}"></script>
         <script src="{{ asset('js/uikit-icons.min.js') }}"></script>
 
-        <title> @yield('title') </title>
+        <title>@yield('title')</title>
     </head>
     <body>
 
@@ -23,5 +23,6 @@
         @include('web.layout.footer')
 
         <script src="{{ mix('js/app.js') }}"></script>
+        @stack('scripts')
     </body>
 </html>
