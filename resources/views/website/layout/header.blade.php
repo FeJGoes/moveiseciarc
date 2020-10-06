@@ -44,5 +44,5 @@
         </svg>
     </a>
 
-    @include('web.layout.offcanvas')
+    @include('website.layout.offcanvas')
 </header>

@@ -14,13 +14,13 @@
     </head>
     <body>
 
-        @include('web.layout.header')
+        @includeUnless(isset($hideHeader), 'admin.includes.header')
+        @includeUnless(isset($hideSidebar) || empty($hideSidebar) , 'admin.includes.sidebar')
 
         <main>
             @yield('content')
         </main>
 
-        @include('web.layout.footer')
 
         <script src="{{ mix('js/app.js') }}"></script>
         @stack('scripts')
