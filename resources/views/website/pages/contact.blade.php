@@ -4,9 +4,8 @@
 
 @section('content')
     <form class="uk-width-1-3@m uk-width-1-2@s uk-width-4-5 uk-margin-auto" method="POST" action="" onsubmit="return false">
-        @csrf
-
         <h3 class="uk-text-center uk-margin-medium-top">Fale Conosco</h3>
+
         <div class="uk-margin-middle-top">
             <label for="nome" class="uk-form-label">
                 <small>*</small>
@@ -14,6 +13,7 @@
             </label>
             <input class="uk-input uk-form-small" id="nome" type="text" maxlength="100" required>
         </div>
+
         <div class="uk-margin-top">
             <label for="email" class="uk-form-label">
                 <small>*</small>
@@ -21,6 +21,7 @@
             </label>
             <input class="uk-input uk-form-small" id="email" type="text" maxlength="100" required>
         </div>
+
         <div class="uk-margin-top">
             <label for="mensagem" class="uk-form-label">
                 <small>*</small>
@@ -28,10 +29,12 @@
             </label>
             <textarea class="uk-textarea" id="mensagem" cols="30" rows="5"></textarea>
         </div>
+
         <div class="uk-flex uk-flex-center uk-margin ">
             <button class="uk-button uk-button-small uk-width-1-3 btn-yellow">Enviar</button>
         </div>
     </form>
+
     <div id="section-info" class="uk-width-1-1 uk-padding">
         <h4>Meios para o Contato:</h4>
         <div id="contact-info" class="uk-width-1-1">
@@ -79,8 +82,10 @@
                 <li>Rio Claro - SP</li>
             </ul>
         </div>
-        <div class="uk-width-1-5" id="map" style="background-color: red;">
-
+        <div class="uk-width-1-1" id="map" style="height: 250px"></div>
+        <div id="infowindow-content">
+            <span id="place-name" class="title"></span><br>
+            <span id="place-address"></span>
         </div>
     </div>
 @endsection
