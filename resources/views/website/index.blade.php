@@ -6,10 +6,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon" />
 
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/uikit.min.css') }}" rel="stylesheet">
-        <script src="{{ asset('js/uikit.min.js') }}"></script>
-        <script src="{{ asset('js/uikit-icons.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ mix('css/style.css') }}" >
+        <link rel="stylesheet" href="{{ mix('css/uikit.min.css') }}">
+        <script src="{{ mix('js/uikit.min.js') }}"></script>
+        <script src="{{ mix('js/uikit-icons.min.js') }}"></script>
 
         <title>@yield('title')</title>
     </head>

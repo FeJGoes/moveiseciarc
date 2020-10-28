@@ -1,6 +1,5 @@
-require('./bootstrap');
 
-window.animateHamburger = function() {
+function animateHamburger() {
     let burgerSVG = document.getElementById('burger')
 
     burgerSVG.classList.toggle('active')
@@ -11,7 +10,7 @@ window.animateHamburger = function() {
 
 
 // Initialize and add the map
-window.initMap = function () {
+function initMap() {
 
     var latlng = {lat: -22.410487, lng: -47.557737};
     var map = new google.maps.Map(document.getElementById('map'), {
