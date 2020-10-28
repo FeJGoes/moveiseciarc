@@ -44,21 +44,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     padding: 50px auto;
 }
 
+#map {
+    margin: 20px 0;
+    width: 70%;
+    min-width: 250px;
+    height: 300px;
+}
+
 .box-location {
-    margin: 0 25px;
-}
+    margin: 25px 0;
+    text-align: center;
 
-.box-location ul li {
-    color:   variables.$color-pri-bkg !important;
-    font-size: small;
-    display: flex;
-}
-
-.box-location ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    p {
+        color:   variables.$color-pri-bkg !important;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
 }

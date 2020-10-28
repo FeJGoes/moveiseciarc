@@ -74,15 +74,12 @@
     </div>
     <div id="section-location">
         <div class="box-location uk-width-1-5">
-            <h5>Endereço</h5>
-            <ul>
-                <li>Rua 1 - Entre Av. 3 e 5</li>
-                <li>Número 961</li>
-                <li>Centro</li>
-                <li>Rio Claro - SP</li>
-            </ul>
+            <h4>Endereço</h4>
+            <p>Rua 1 - Entre Av. 3 e 5</p>
+            <p>Número 961 - Centro</p>
+            <p>Rio Claro - SP</p>
         </div>
-        <div class="uk-width-1-1" id="map" style="height: 250px"></div>
+        <div id="map"></div>
         <div id="infowindow-content">
             <span id="place-name" class="title"></span><br>
             <span id="place-address"></span>
