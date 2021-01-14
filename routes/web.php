@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\WebAuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,12 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::redirect('/', '/inicio');
-Route::view('/inicio', 'website.pages.home')->name('home');
-Route::view('/contato', 'website.pages.contact')->name('contato');
-Route::view('/empresa', 'website.pages.company')->name('empresa');
-Route::view('/catalogos', 'website.pages.catalog')->name('catalogo');
-
+Route::view('inicio', 'pages.home')->name('home');
+Route::view('contato', 'pages.contact')->name('contato');
+Route::view('empresa', 'pages.company')->name('empresa');
+Route::view('catalogos', 'pages.catalog')->name('catalogo');
 
 Route::prefix('admin')->group(function () {
-    Route::view('login ', 'admin.pages.login');
+    Route::view('login ', 'pages.admin.login')->name('login');
+
+    Route::post('authenticate',
+        [ WebAuthController::class, 'authenticate' ]
+    )->name('authenticate');
+
+    Route::middleware('web')->group(function(){
+        Route::get('logout',
+            [ WebAuthController::class, 'logout' ]
+        )->name('logout');
+
+    });
 });

@@ -1,0 +1,9 @@
+# Ignore artifacts:
+public
+app
+vendor
+.editorconfig
+
+
+# # Ignore all HTML files:
+# *.html

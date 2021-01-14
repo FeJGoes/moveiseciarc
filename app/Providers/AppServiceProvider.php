@@ -1,6 +1,6 @@
 <?php
 
-namespace MoveisECia\Providers;
+namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

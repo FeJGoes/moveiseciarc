@@ -1,4 +1,4 @@
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -6,17 +6,38 @@ const mix = require("laravel-mix");
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
+ | for your Laravel applications. By default, we are compiling the CSS
  | file for the application as well as bundling up all the JS files.
  |
  */
 
-mix.scripts("resources/js/app.js", "public/js/app.js").version();
-mix.sass("resources/sass/style.scss", "public/css").version();
-mix.sass("resources/sass/error.scss", "public/css").version();
-mix.copyDirectory('resources/images','public/images')
-    .copy([
-        "vendor/uikit/uikit/dist/js/uikit.min.js",
-        "vendor/uikit/uikit/dist/js/uikit-icons.min.js",
-    ], "public/js" )
-    .copy("vendor/uikit/uikit/dist/css/uikit.min.css", "public/css/")
+/**
+ * Disable Notifications
+ */
+mix.disableSuccessNotifications();
+
+/**
+ * Javascripts files
+ */
+mix.js([
+  "node_modules/uikit/dist/js/uikit.min.js",
+  "node_modules/uikit/dist/js/uikit-icons.min.js",
+  "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
+  "resources/js/app.js",
+], "public/js/app.js");
+
+/**
+ * Sass files
+ */
+mix.sass("resources/scss/style.scss", "public/css");
+mix.sass("resources/scss/error.scss", "public/css");
+
+
+/**
+ * Copy files
+ */
+mix.copyDirectory('resources/images', 'public/images');
+
+
+
+mix.version();
