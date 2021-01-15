@@ -384,3 +384,67 @@
     width: 350px;
   }
 }
+
+.mc-text-primary {
+  color: #ffffff;
+}
+
+.mc-bg-primary {
+  background-color: #303030;
+}
+
+.mc-bottom-line {
+  border-bottom: 0.8px solid #ffc700;
+}
+
+.uk-input:focus {
+  outline: 0;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.uk-form-blank:focus {
+  border-color: transparent;
+  border-style: none;
+}
+
+.uk-alert {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 15px 29px 15px 15px;
+  background: #f8f8f8;
+  color: #666;
+  border-radius: 5px;
+}
+
+/*
+ * Primary
+ */
+.uk-alert-primary {
+  background: #60A5FA;
+  color: #BFDBFE;
+}
+
+/*
+ * Success
+ */
+.uk-alert-success {
+  background: #10B981;
+  color: #A7F3D0;
+}
+
+/*
+ * Warning
+ */
+.uk-alert-warning {
+  background: #FBBF24;
+  color: #F3F4F6;
+}
+
+/*
+ * Danger
+ */
+.uk-alert-danger {
+  background: #EF4444;
+  color: #FECACA;
+}
