@@ -5,7 +5,5 @@
   "useTabs": false,
   "semi": false,
   "singleQuote": true,
-  "bracketSpacing": false,
-  "requirePragma": true,
-  "insertPragma": true
+  "bracketSpacing": false
 }

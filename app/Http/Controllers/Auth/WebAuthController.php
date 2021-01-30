@@ -21,7 +21,6 @@ class WebAuthController extends Controller
 
         if (Auth::attempt($credentials + ['active' => true])) {
             $request->session()->regenerate();
-
             return redirect()->intended('dashboard');
         }
 
@@ -39,9 +38,7 @@ class WebAuthController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/');

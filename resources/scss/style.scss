@@ -1,11 +1,10 @@
 @use 'variables';
 
 @import '~@fortawesome/fontawesome-free/css/all.min.css',
-'~uikit/dist/css/uikit.min.css';
-
+  '~uikit/dist/css/uikit.min.css';
 
 @import 'global', 'hamburguer', 'header', 'footer', 'contact', 'company',
-'catalog', 'home';
+  'catalog', 'home';
 
 .mc-text-primary {
   color: variables.$color-white;
@@ -16,7 +15,7 @@
 }
 
 .mc-bottom-line {
-  border-bottom: .8px solid variables.$color-yellow;
+  border-bottom: 0.8px solid variables.$color-yellow;
 }
 
 .uk-input:focus {
@@ -31,43 +30,38 @@
   border-style: none;
 }
 
-.uk-alert {
-  position: relative;
-  margin-bottom: 20px;
-  padding: 15px 29px 15px 15px;
-  background: #f8f8f8;
-  color: #666;
-  border-radius: 5px
-}
-
 /*
  * Primary
  */
 .uk-alert-primary {
-  background: #60A5FA;
-  color: #BFDBFE;
+  background: #60a5fa;
+  color: #bfdbfe;
+  border-radius: 5px;
 }
 
 /*
  * Success
  */
 .uk-alert-success {
-  background: #10B981;
-  color: #A7F3D0;
+  background: #10b981;
+  color: #a7f3d0;
+  border-radius: 5px;
 }
 
 /*
  * Warning
  */
 .uk-alert-warning {
-  background: #FBBF24;
-  color: #F3F4F6;
+  background: #fbbf24;
+  color: #f3f4f6;
+  border-radius: 5px;
 }
 
 /*
  * Danger
  */
 .uk-alert-danger {
-  background: #EF4444;
-  color: #FECACA;
+  background: #ef4444;
+  color: #fecaca;
+  border-radius: 5px;
 }

@@ -16,10 +16,10 @@ $hideSidebar = true;
 
   {{-- ALERT ERROR --}}
   @if ($errors->any())
-  <div class="uk-alert-danger uk-width-1-4 uk-text-center uk-padding-small" uk-alert>
+  <div class="uk-alert-danger uk-width-1-4 uk-padding-small" uk-alert>
     <a class="uk-alert-close" uk-close></a>
     @foreach ($errors->all() as $error)
-    <p class="uk-margin-remove"><small>{{$error}}</small></p>
+    <p class="uk-margin-remove uk-text-center"><small>{{$error}}</small></p>
     @endforeach
   </div>
   @endif

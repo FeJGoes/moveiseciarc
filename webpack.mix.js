@@ -1,4 +1,4 @@
-const mix = require('laravel-mix');
+const mix = require('laravel-mix')
 
 /*
  |--------------------------------------------------------------------------
@@ -14,30 +14,35 @@ const mix = require('laravel-mix');
 /**
  * Disable Notifications
  */
-mix.disableSuccessNotifications();
+mix.disableSuccessNotifications()
 
 /**
  * Javascripts files
  */
-mix.js([
-  "node_modules/uikit/dist/js/uikit.min.js",
-  "node_modules/uikit/dist/js/uikit-icons.min.js",
-  "node_modules/@fortawesome/fontawesome-free/js/all.min.js",
-  "resources/js/app.js",
-], "public/js/app.js");
+mix.js(
+  [
+    'node_modules/@fortawesome/fontawesome-free/js/all.min.js',
+    'resources/js/app.js',
+  ],
+  'public/js/app.js'
+)
+mix.copy(
+  [
+    'node_modules/uikit/dist/js/uikit.js',
+    'node_modules/uikit/dist/js/uikit-icons.js',
+  ],
+  'public/js/'
+)
 
 /**
  * Sass files
  */
-mix.sass("resources/scss/style.scss", "public/css");
-mix.sass("resources/scss/error.scss", "public/css");
-
+mix.sass('resources/scss/style.scss', 'public/css')
+mix.sass('resources/scss/error.scss', 'public/css')
 
 /**
  * Copy files
  */
-mix.copyDirectory('resources/images', 'public/images');
+mix.copyDirectory('resources/images', 'public/images')
 
-
-
-mix.version();
+mix.version()

@@ -16,6 +16,20 @@ class ExampleTest extends TestCase
     {
         $response = $this->get('/');
 
+        // $response->assertStatus(200);
+        $response->assertRedirect('/inicio');
+    }
+
+    /**
+     * A basic test example.
+     *
+     * @return void
+     */
+    public function testLoginPage()
+    {
+        $response = $this->get('/admin/login');
+
         $response->assertStatus(200);
+        $response->assertSessionHasNoErrors();
     }
 }

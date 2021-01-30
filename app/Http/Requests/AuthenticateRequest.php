@@ -28,4 +28,17 @@ class AuthenticateRequest extends FormRequest
             'password' => 'required|filled'
         ];
     }
+
+
+    /**
+     * Get custom messages for validator errors.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'email.exists' => __('passwords.user')
+        ];
+    }
 }
