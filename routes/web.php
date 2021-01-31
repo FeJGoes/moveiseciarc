@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\WebAuthController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+$parameters = [
+    'usuarios' => 'user'
+];
 
 Route::redirect('/', '/inicio');
 Route::view('inicio', 'pages.home')->name('home');
@@ -20,17 +24,22 @@ Route::view('contato', 'pages.contact')->name('contato');
 Route::view('empresa', 'pages.company')->name('empresa');
 Route::view('catalogos', 'pages.catalog')->name('catalogo');
 
-Route::prefix('admin')->group(function () {
-    Route::view('login ', 'pages.admin.login')->name('login');
+Route::prefix('admin')->group(function () use ($parameters) {
+    Route::view('login', 'pages.admin.login')->name('login');
 
     Route::post('authenticate',
-        [ WebAuthController::class, 'authenticate' ]
+        [WebAuthController::class,'authenticate']
     )->name('authenticate');
 
-    Route::middleware('web')->group(function(){
+    Route::middleware('auth')->group(function() use($parameters){
         Route::get('logout',
-            [ WebAuthController::class, 'logout' ]
+            [WebAuthController::class,'logout']
         )->name('logout');
 
+        Route::view('dashboard ', 'pages.admin.dashboard')->name('dashboard');
+
+        Route::resources([
+            'usuarios' => UserController::class,
+        ],['parameters' => $parameters]);
     });
 });
