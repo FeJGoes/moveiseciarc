@@ -33,6 +33,15 @@
     <legend class="uk-legend">{{$legend ?? ''}} usuário</legend>
 
     <div class="uk-margin">
+      <input type="hidden" name="active" value="0">
+      <label class="switch">
+        <input type="checkbox" name="active" value="1" @if($user->active) checked @endif>
+        <span class="slider round"></span>
+      </label>
+      <small>Ativo</small>
+    </div>
+
+    <div class="uk-margin">
       <label for="name">Nome</label>
       <input class="uk-input" name="name" value="{{$user->name ?? ''}}" type="text" placeholder="">
     </div>

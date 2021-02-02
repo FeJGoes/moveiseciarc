@@ -4,7 +4,7 @@
   '~uikit/dist/css/uikit.min.css';
 
 @import 'global', 'hamburguer', 'header', 'footer', 'contact', 'company',
-  'catalog', 'home';
+  'catalog', 'home', 'forms';
 
 .mc-text-primary {
   color: variables.$color-white;
@@ -64,4 +64,7 @@
   background: #ef4444;
   color: #fecaca;
   border-radius: 5px;
+}
+
+.mc-table-container {
 }
