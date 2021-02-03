@@ -32,14 +32,16 @@
   <fieldset class="uk-fieldset">
     <legend class="uk-legend">{{$legend ?? ''}} usuário</legend>
 
+    @if(!empty($method) && in_array(strtoupper($method),['PUT','PACTH']))
     <div class="uk-margin">
       <input type="hidden" name="active" value="0">
       <label class="switch">
-        <input type="checkbox" name="active" value="1" @if($user->active) checked @endif>
+        <input type="checkbox" name="active" value="1" @if(!empty($user) && $user->active) checked @endif>
         <span class="slider round"></span>
       </label>
       <small>Ativo</small>
     </div>
+    @endif
 
     <div class="uk-margin">
       <label for="name">Nome</label>

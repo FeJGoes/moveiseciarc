@@ -6,6 +6,7 @@ use Exception;
 use Throwable;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
@@ -16,10 +17,18 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $users = User::all();
+
+        if($request->expectsJson()) {
+            return $users->isEmpty()
+                    ? response()->json('',204)
+                    : response()->json($users);
+        }
+
         return view('pages.admin.user.index')
-                ->with(['users' => User::all()]);
+                ->with(['users' => $users]);
     }
 
     /**
@@ -39,15 +48,21 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UsuarioRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsuarioRequest $request)
     {
         try {
-            User::create($request->all());
+            $user = User::create($request->all());
         } catch (Exception $e) {
             return back()->withErrors(['message' => $e->getMessage()]);
+        }
+
+        if($request->expectsJson()) {
+            return empty($user)
+                    ? response()->json('',204)
+                    : response()->json($user);
         }
 
         Session::flash('feedback', [
@@ -92,11 +107,11 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UsuarioRequest $request
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UsuarioRequest $request, User $user)
     {
         $user->fill($request->all());
 
@@ -107,6 +122,12 @@ class UserController extends Controller
         } catch (Throwable $e) {
             DB::rollBack();
             return back()->withErrors(['message' => $e->getMessage()]);
+        }
+
+        if($request->expectsJson()) {
+            return empty($user)
+                    ? response()->json('',204)
+                    : response()->json($user);
         }
 
         Session::flash('feedback', [
@@ -123,19 +144,28 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Request $request, User $user)
     {
         try {
             DB::beginTransaction();
-            $user->delete();
+            $deleted = $user->delete();
             DB::commit();
         } catch (Throwable $e) {
             DB::rollBack();
+
+            if ($request->expectsJson()) {
+                return response()->json(['message' => $e->getMessage()]);
+            }
+
             return back()->withErrors(['message' => $e->getMessage()]);
         }
 
+        if ($request->expectsJson()) {
+            return response()->json($deleted);
+        }
+
         Session::flash('feedback', [
-            'type' => 'success',
+            'type' => 'warning',
             'message' => __('Usuário apagado com sucesso!')
         ]);
 
