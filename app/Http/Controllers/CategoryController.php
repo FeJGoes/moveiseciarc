@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use Exception;
 use Throwable;
-use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class UserController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,16 +19,16 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::all();
+        $categories = Category::all();
 
         if($request->expectsJson()) {
-            return $users->isEmpty()
+            return $categories->isEmpty()
                     ? response()->json('',204)
-                    : response()->json($users);
+                    : response()->json($categories);
         }
 
-        return view('pages.admin.user.index')
-                ->with(['users' => $users]);
+        return view('pages.admin.category.index')
+                ->with(['categories' => $categories]);
     }
 
     /**
@@ -38,9 +38,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.user.create')
+        return view('pages.admin.category.create')
                 ->with([
-                    'action' => route('usuarios.store'),
+                    'action' => route('categorias.store'),
                     'legend' => 'Cadastrar',
                 ]);
     }
@@ -48,26 +48,26 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\UsuarioRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UsuarioRequest $request)
+    public function store(CategoryRequest $request)
     {
         try {
-            $user = User::create($request->all());
+            $category = Category::create($request->all());
         } catch (Exception $e) {
             return back()->withErrors(['message' => $e->getMessage()]);
         }
 
         if($request->expectsJson()) {
-            return empty($user)
+            return empty($category)
                     ? response()->json('',204)
-                    : response()->json($user);
+                    : response()->json($category);
         }
 
         Session::flash('feedback', [
             'type' => 'success',
-            'message' => __('Usuário cadastrado com sucesso!')
+            'message' => __('Categoria cadastrada com sucesso!')
         ]);
 
         return back();
@@ -76,10 +76,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Category $category)
     {
         //
     }
@@ -87,18 +87,18 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Category $category)
     {
-        return view('pages.admin.user.edit')
+        return view('pages.admin.category.edit')
                 ->with([
-                    'action' => route('usuarios.update',['user' => $user->id]),
+                    'action' => route('categorias.update',['categoria' => $category]),
                     'legend' => 'Editar',
                     'method' => 'PUT',
                     'enctype' => 'application/x-www-form-urlencoded',
-                    'user' => $user,
+                    'category' => $category,
                     'buttonText' => 'Salvar',
                 ]);
     }
@@ -106,17 +106,17 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UsuarioRequest $request
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(UsuarioRequest $request, User $user)
+    public function update(CategoryRequest $request, Category $category)
     {
-        $user->fill($request->all());
+        $category->fill($request->all());
 
         DB::beginTransaction();
         try {
-            $user->save();
+            $category->save();
             DB::commit();
         } catch (Throwable $e) {
             DB::rollBack();
@@ -124,14 +124,14 @@ class UserController extends Controller
         }
 
         if($request->expectsJson()) {
-            return empty($user)
+            return empty($category)
                     ? response()->json('',204)
-                    : response()->json($user);
+                    : response()->json($category);
         }
 
         Session::flash('feedback', [
             'type' => 'success',
-            'message' => __('Usuário alterado com sucesso!')
+            'message' => __('Categoria alterada com sucesso!')
         ]);
 
         return back();
@@ -140,14 +140,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, User $user)
+    public function destroy(Request $request, Category $category)
     {
         DB::beginTransaction();
+
         try {
-            $deleted = $user->delete();
+            $deleted = $category->delete();
             DB::commit();
         } catch (Throwable $e) {
             DB::rollBack();
@@ -165,7 +166,7 @@ class UserController extends Controller
 
         Session::flash('feedback', [
             'type' => 'warning',
-            'message' => __('Usuário apagado com sucesso!')
+            'message' => __('Categoria apagada com sucesso!')
         ]);
 
         return back();

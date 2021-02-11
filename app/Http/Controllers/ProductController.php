@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Exception;
 use Throwable;
-use App\Models\User;
+use App\Models\Product;
 use Illuminate\Http\Request;
-use App\Http\Requests\UsuarioRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
-class UserController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,16 +18,16 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $users = User::all();
+        $products = Product::all();
 
         if($request->expectsJson()) {
-            return $users->isEmpty()
+            return $products->isEmpty()
                     ? response()->json('',204)
-                    : response()->json($users);
+                    : response()->json($products);
         }
 
-        return view('pages.admin.user.index')
-                ->with(['users' => $users]);
+        return view('pages.admin.product.index')
+                ->with(['products' => $products]);
     }
 
     /**
@@ -38,9 +37,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('pages.admin.user.create')
+        return view('pages.admin.product.create')
                 ->with([
-                    'action' => route('usuarios.store'),
+                    'action' => route('produtos.store'),
                     'legend' => 'Cadastrar',
                 ]);
     }
@@ -48,26 +47,26 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\UsuarioRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(UsuarioRequest $request)
+    public function store(Request $request)
     {
         try {
-            $user = User::create($request->all());
+            $product = Product::create($request->all());
         } catch (Exception $e) {
             return back()->withErrors(['message' => $e->getMessage()]);
         }
 
         if($request->expectsJson()) {
-            return empty($user)
+            return empty($product)
                     ? response()->json('',204)
-                    : response()->json($user);
+                    : response()->json($product);
         }
 
         Session::flash('feedback', [
             'type' => 'success',
-            'message' => __('Usuário cadastrado com sucesso!')
+            'message' => __('Produto cadastrado com sucesso!')
         ]);
 
         return back();
@@ -76,10 +75,10 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Product $product)
     {
         //
     }
@@ -87,18 +86,18 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Product $product)
     {
-        return view('pages.admin.user.edit')
+        return view('pages.admin.product.edit')
                 ->with([
-                    'action' => route('usuarios.update',['user' => $user->id]),
+                    'action' => route('produtos.update',['produto' => $product]),
                     'legend' => 'Editar',
                     'method' => 'PUT',
                     'enctype' => 'application/x-www-form-urlencoded',
-                    'user' => $user,
+                    'product' => $product,
                     'buttonText' => 'Salvar',
                 ]);
     }
@@ -106,17 +105,17 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UsuarioRequest $request
-     * @param  \App\Models\User  $user
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UsuarioRequest $request, User $user)
+    public function update(Request $request, Product $product)
     {
-        $user->fill($request->all());
+        $product->fill($request->all());
 
         DB::beginTransaction();
         try {
-            $user->save();
+            $product->save();
             DB::commit();
         } catch (Throwable $e) {
             DB::rollBack();
@@ -124,14 +123,14 @@ class UserController extends Controller
         }
 
         if($request->expectsJson()) {
-            return empty($user)
+            return empty($product)
                     ? response()->json('',204)
-                    : response()->json($user);
+                    : response()->json($product);
         }
 
         Session::flash('feedback', [
             'type' => 'success',
-            'message' => __('Usuário alterado com sucesso!')
+            'message' => __('Produto alterado com sucesso!')
         ]);
 
         return back();
@@ -140,14 +139,15 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request, User $user)
+    public function destroy(Request $request, Product $product)
     {
         DB::beginTransaction();
+
         try {
-            $deleted = $user->delete();
+            $deleted = $product->delete();
             DB::commit();
         } catch (Throwable $e) {
             DB::rollBack();
@@ -165,7 +165,7 @@ class UserController extends Controller
 
         Session::flash('feedback', [
             'type' => 'warning',
-            'message' => __('Usuário apagado com sucesso!')
+            'message' => __('Produto apagado com sucesso!')
         ]);
 
         return back();
