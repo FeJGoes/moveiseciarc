@@ -4,11 +4,23 @@ namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AuthenticateRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AuthenticateRequest;
 
 class WebAuthController extends Controller
 {
+    /**
+     * Log the user out of the application.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+    public function login(Request $request)
+    {
+        return view('pages.admin.login')
+                ->with(['hideSidebar' => true]);
+    }
+
     /**
      * Handle an authentication attempt.
      *
@@ -20,8 +32,11 @@ class WebAuthController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials + ['active' => true])) {
+            $arriveFrom = $request->session()->get('arrive_from');
+            $request->session()->forget('arrive_from');
             $request->session()->regenerate();
-            return redirect()->intended('admin/dashboard');
+
+            return redirect()->intended($arriveFrom ?? 'admin/dashboard');
         }
 
         return back()->withErrors([
@@ -33,7 +48,7 @@ class WebAuthController extends Controller
      * Log the user out of the application.
      *
      * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
      */
     public function logout(Request $request)
     {

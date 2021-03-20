@@ -7,12 +7,12 @@
   <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon" />
   <link href="{{mix('css/style.css')}}" rel="stylesheet">
   @yield('css')
+
   <title>@yield('title')</title>
 </head>
 
 <body>
-  @includeUnless(!empty($hideHeader), 'includes.admin.header')
-  <main>
+  <main class="uk-flex">
     @includeUnless(!empty($hideSidebar), 'includes.admin.sidebar')
 
     @yield('content')

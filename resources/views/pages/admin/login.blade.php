@@ -1,17 +1,12 @@
 @extends('templates.admin')
 
-@php
-$hideHeader = true;
-$hideSidebar = true;
-@endphp
-
-@section('title', 'Login - Painel - Moveis&Cia')
+@section('title', 'Entrar - Área Restrita - Moveis&Cia')
 
 @section('content')
-<section class="uk-width-1-1 uk-height-viewport uk-flex uk-flex-column uk-flex-center uk-flex-middle mc-bg-primary">
+<section class="uk-width-1-1 uk-height-viewport uk-flex uk-flex-column uk-flex-center uk-flex-middle bg-primary">
 
   <figure>
-    <img width="125" src="{{ asset('images/logo-branco.svg') }}" alt="moveis&cia">
+    <img width="125" src="{{asset('images/logo-branco.svg')}}" alt="moveis&cia">
   </figure>
 
   {{-- ALERT ERROR --}}
@@ -25,8 +20,7 @@ $hideSidebar = true;
   @endif
   {{-- END ALERT ERROR --}}
 
-  <form action="{{route('authenticate')}}" method="POST"
-    class="uk-width-1-3 uk-flex uk-flex-column uk-flex-around uk-flex-middle">
+  <form action="{{route('authenticate')}}" method="POST" class="uk-width-1-3 uk-flex uk-flex-column uk-flex-around uk-flex-middle">
     @csrf
 
     <div class="uk-width-5-6 uk-flex uk-flex-middle uk-flex-center uk-margin mc-bottom-line">
@@ -34,8 +28,7 @@ $hideSidebar = true;
         <i class="fas fa-at"></i>
         <span class="uk-margin-right-small">Email</span>
       </label>
-      <input class="uk-input uk-form-blank uk-width-1-1 @error('email') uk-form-danger @enderror" id="email"
-        name="email" type="email" value="{{old('email')}}">
+      <input class="uk-input uk-form-blank uk-width-1-1 @error('email') uk-form-danger @enderror" id="email" name="email" type="email" value="{{old('email')}}">
     </div>
 
     <div class="uk-width-5-6 uk-flex uk-flex-middle uk-flex-center uk-margin mc-bottom-line">
@@ -43,11 +36,11 @@ $hideSidebar = true;
         <i class="fas fa-key"></i>
         <span class="uk-margin-right-small">Senha</span>
       </label>
-      <input class="uk-input uk-form-blank uk-width-1-1 @error('password') uk-form-danger @enderror" id="password"
-        name="password" type="password">
+      <input class="uk-input uk-form-blank uk-width-1-1 @error('password') uk-form-danger @enderror" id="password" name="password" type="password">
     </div>
 
     <button class="uk-button btn-yellow uk-width-2-3 uk-margin-top" type="submit">Entrar</button>
   </form>
+
 </section>
 @endsection

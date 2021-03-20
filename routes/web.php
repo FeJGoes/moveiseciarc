@@ -25,7 +25,9 @@ Route::view('empresa', 'pages.company')->name('empresa');
 Route::view('catalogos', 'pages.catalog')->name('catalogo');
 
 Route::prefix('admin')->group(function () use ($parameters) {
-    Route::view('login', 'pages.admin.login')->name('login');
+    Route::get('login',
+        [WebAuthController::class,'login']
+    )->name('login');
 
     Route::post('authenticate',
         [WebAuthController::class,'authenticate']
@@ -36,7 +38,7 @@ Route::prefix('admin')->group(function () use ($parameters) {
             [WebAuthController::class,'logout']
         )->name('logout');
 
-        Route::view('dashboard ', 'pages.admin.dashboard')->name('dashboard');
+        Route::view('dashboard', 'pages.admin.dashboard')->name('dashboard');
 
         Route::resources([
             'usuarios' => UserController::class,
