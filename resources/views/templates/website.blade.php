@@ -7,14 +7,17 @@
   <meta name="csrf-token" content="{{csrf_token()}}">
   <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}" type="image/x-icon" />
   <link href="{{mix('css/style.css')}}" rel="stylesheet">
+
   <title>@yield('title')</title>
 </head>
 
 <body>
   @include('includes.website.header')
+
   <main>
     @yield('content')
   </main>
+
   @include('includes.website.footer')
 
   <script async defer

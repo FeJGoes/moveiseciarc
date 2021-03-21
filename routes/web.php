@@ -33,6 +33,14 @@ Route::prefix('admin')->group(function () use ($parameters) {
         [WebAuthController::class,'authenticate']
     )->name('authenticate');
 
+    Route::match(['get','post'], 'esqueci-a-senha',
+        [WebAuthController::class,'forgotPassword']
+    )->middleware('guest')->name('password.forgot');
+
+    Route::match(['get','post'], 'redefinicao-senha/{token?}',
+        [WebAuthController::class,'resetPassword']
+    )->middleware('guest')->name('password.reset');
+
     Route::middleware('auth')->group(function() use($parameters){
         Route::get('logout',
             [WebAuthController::class,'logout']

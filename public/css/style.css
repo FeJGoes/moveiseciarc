@@ -433,11 +433,35 @@
   border-radius: 50%;
 }
 
+.sidebar {
+  background: #303030;
+  min-height: 100vh;
+  width: 200px;
+  color: #ffffff;
+}
+.sidebar nav ul li {
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+.sidebar nav ul li:hover {
+  background: #fefee7;
+  box-shadow: inset 1px 0 #303030, inset -1px 0 #303030;
+}
+.sidebar nav ul li:hover a {
+  color: #303030;
+}
+.sidebar a,
+.sidebar h6 {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .mc-text-primary {
   color: #ffffff;
 }
 
-.mc-bg-primary {
+.bg-primary {
   background-color: #303030;
 }
 
@@ -490,8 +514,4 @@
   background: #ef4444;
   color: #fecaca;
   border-radius: 5px;
-}
-
-.mc-table-container > :nth-child(n) {
-  margin: 10px auto;
 }

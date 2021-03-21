@@ -6,11 +6,13 @@
 @import 'global', 'hamburguer', 'header', 'footer', 'contact', 'company',
   'catalog', 'home', 'forms';
 
+@import 'admin/sidebar';
+
 .mc-text-primary {
   color: variables.$color-white;
 }
 
-.mc-bg-primary {
+.bg-primary {
   background-color: variables.$color-pri-bkg;
 }
 

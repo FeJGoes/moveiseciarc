@@ -94,7 +94,7 @@ class UserController extends Controller
     {
         return view('pages.admin.user.edit')
                 ->with([
-                    'action' => route('usuarios.update',['user' => $user->id]),
+                    'action' => route('usuarios.update',['user' => $user]),
                     'legend' => 'Editar',
                     'method' => 'PUT',
                     'enctype' => 'application/x-www-form-urlencoded',

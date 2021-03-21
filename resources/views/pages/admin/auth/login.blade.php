@@ -9,16 +9,14 @@
     <img width="125" src="{{asset('images/logo-branco.svg')}}" alt="moveis&cia">
   </figure>
 
-  {{-- ALERT ERROR --}}
-  @if ($errors->any())
-  <div class="uk-alert-danger uk-width-1-4 uk-padding-small" uk-alert>
-    <a class="uk-alert-close" uk-close></a>
-    @foreach ($errors->all() as $error)
-    <p class="uk-margin-remove uk-text-center"><small>{{$error}}</small></p>
-    @endforeach
-  </div>
+  {{-- FEEDBACK --}}
+  @if ($errors->any() || session()->exists('feedback'))
+  <x-alert
+    type="{{$errors->any() ? 'danger' : session('feedback.type')}}"
+    message="{{$errors->any() ? $errors->first() : session('feedback.message')}}"
+  />
   @endif
-  {{-- END ALERT ERROR --}}
+  {{-- END FEEDBACK --}}
 
   <form action="{{route('authenticate')}}" method="POST" class="uk-width-1-3 uk-flex uk-flex-column uk-flex-around uk-flex-middle">
     @csrf

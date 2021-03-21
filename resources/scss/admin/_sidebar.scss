@@ -1,0 +1,28 @@
+.sidebar {
+  background: variables.$color-pri-bkg;
+  min-height: 100vh;
+  width: 200px;
+  color: variables.$text-primary;
+
+  nav ul li {
+    width: 100%;
+    height: 25px;
+    text-align: center;
+
+    &:hover {
+      background: variables.$color-soft-yellow;
+      box-shadow: inset 1px 0 variables.$color-pri-bkg,
+        inset -1px 0 variables.$color-pri-bkg;
+
+      a {
+        color: variables.$color-pri-bkg;
+      }
+    }
+  }
+
+  a,
+  h6 {
+    color: variables.$text-primary;
+    text-decoration: none;
+  }
+}
